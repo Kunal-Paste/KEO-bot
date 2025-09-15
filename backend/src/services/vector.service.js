@@ -1,0 +1,32 @@
+// Import the Pinecone library
+const { Pinecone } = require('@pinecone-database/pinecone');
+const { models } = require('mongoose');
+
+// Initialize a Pinecone client with your API key
+const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
+
+const GPTIndex = pc.index('project-gpt');
+
+async function createMemory({ vectors, metadata, messageId }) {
+    await GPTIndex.upsert([{
+        id: messageId,
+        values: vectors,
+        metadata
+    }])
+}
+
+
+async function queryMemory({ queryVector, limit = 5, metadata }) {
+    const data = await GPTIndex.query({
+        vector: queryVector,
+        topK: limit,
+        filter: metadata ? { metadata } : undefined,
+        includeMetadata
+    })
+
+    return data.matches;
+}
+
+
+module.exports = {createMemory,queryMemory};
+
