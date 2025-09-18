@@ -20,16 +20,16 @@ const Register = () => {
 
         axios.post("http://localhost:3000/api/auth/register", {
             email: form.email,
-            fullName: {
-                firstName: form.firstname,
-                lastName: form.lastname
+            fullname: {
+                firstname: form.firstname,
+                lastname: form.lastname
             },
             password: form.password
         }, {
             withCredentials: true
         }).then((res) => {
             console.log(res);
-            navigate("/");
+            navigate("/Login");
         }).catch((err) => {
             console.error(err);
             alert('Registration failed (placeholder)');
@@ -75,7 +75,7 @@ const Register = () => {
                         {submitting ? 'Creating...' : 'Create Account'}
                     </button>
                 </form>
-                <p className="auth-alt">Already have an account? <Link to="/login">Sign in</Link></p>
+                <p className="auth-alt">Already have an account? <Link to="/Login">Sign in</Link></p>
             </div>
         </div>
     );

@@ -30,7 +30,7 @@ const Login = () => {
             }
         ).then((res) => {
             console.log(res);
-            navigate("/");
+            navigate("/Home");
         }).catch((err) => {
             console.error(err);
         }).finally(() => {
@@ -59,7 +59,7 @@ const Login = () => {
                         {submitting ? 'Signing in...' : 'Sign in'}
                     </button>
                 </form>
-                <p className="auth-alt">Need an account? <Link to="/register">Create one</Link></p>
+                <p className="auth-alt">Need an account? <Link to="/">Create one</Link></p>
             </div>
         </div>
     );

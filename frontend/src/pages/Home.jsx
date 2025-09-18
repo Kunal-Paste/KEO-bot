@@ -152,7 +152,7 @@ const Home = () => {
                 {messages.length === 0 && (
                     <div className="chat-welcome" aria-hidden="true">
                         <div className="chip">Early Preview</div>
-                        <h1>Cosmic AI</h1>
+                        <h1 className='cosmic-heading'>Cosmic AI</h1>
                         <p>Ask anything. Paste text, brainstorm ideas, or get quick explanations. Your chats stay in the sidebar so you can pick up where you left off.</p>
                     </div>
                 )}

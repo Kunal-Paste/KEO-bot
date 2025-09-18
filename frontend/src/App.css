@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("/font/Besty-Land.otf") format("truetype");
+}
+
+.cosmic-heading {
+  font-family: "MyCustomFont", sans-serif;
+}
+
 html,
 body {
   height: 100%;
