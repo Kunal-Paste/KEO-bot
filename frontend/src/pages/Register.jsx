@@ -18,7 +18,7 @@ const Register = () => {
         setSubmitting(true);
         console.log(form);
 
-        axios.post("http://localhost:3000/api/auth/register", {
+        axios.post("https://cosmicai-01zg.onrender.com/api/auth/register", {
             email: form.email,
             fullname: {
                 firstname: form.firstname,
